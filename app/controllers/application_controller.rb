@@ -1,8 +1,11 @@
 require "./config/environment"
 require "./app/models/user"
 require 'pry'
-class ApplicationController < Sinatra::Base
+require "sinatra/base"
+require "sinatra/content_for"
 
+class ApplicationController < Sinatra::Base
+helpers Sinatra::ContentFor
   configure do
     set :views, "app/views"
     enable :sessions
